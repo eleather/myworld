@@ -1,2 +1,11 @@
-.page_content#index
-  This is index#main.
+:javascript
+  jQuery(function() {
+    jQuery("#tabs").tabs();
+  });
+
+#tabs
+  %ul
+    %li
+      %a{:href => adventures_path} Your Adventures
+    %li
+      %a{:href => new_adventure_path} + Add Adventure

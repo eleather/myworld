@@ -1,6 +1,6 @@
 %html
   %head
-    %title Builder
+    %title= @title || 'Invent'
     = stylesheet_link_tag :all
     = stylesheet_link_tag 'controllers/' + controller.controller_name
     = javascript_include_tag 'http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js'

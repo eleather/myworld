@@ -1,5 +1,5 @@
 class AdventuresController < ApplicationController
-  layout 'top_level', :only => 'show'
+  layout 'top_level', :only => ['show']
   
   # GET /adventures
   # GET /adventures.xml
@@ -16,6 +16,7 @@ class AdventuresController < ApplicationController
   # GET /adventures/1.xml
   def show
     @adventure = Adventure.find(params[:id])
+    @title = @adventure.name + " - Invent"
 
     respond_to do |format|
       format.html # show.html.erb

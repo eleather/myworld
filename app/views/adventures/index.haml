@@ -1,0 +1,7 @@
+.tab-title Your Adventures
+
+- @adventures.group_by(&:level).each do |level, level_adventures|
+  .tab-section
+    .tab-section-title= "Level #{level}"
+    - level_adventures.each do |adventure|
+      = link_to adventure.name, adventure
