@@ -1,0 +1,33 @@
+<h1>Listing encounter_enemies</h1>
+
+<table>
+  <tr>
+    <th>Encounter</th>
+    <th>Name</th>
+    <th>Number</th>
+    <th>Abbreviation</th>
+    <th>Xp</th>
+    <th>Description</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @encounter_enemies.each do |encounter_enemy| %>
+  <tr>
+    <td><%= encounter_enemy.encounter_id %></td>
+    <td><%= encounter_enemy.name %></td>
+    <td><%= encounter_enemy.number %></td>
+    <td><%= encounter_enemy.abbreviation %></td>
+    <td><%= encounter_enemy.xp %></td>
+    <td><%= encounter_enemy.description %></td>
+    <td><%= link_to 'Show', encounter_enemy %></td>
+    <td><%= link_to 'Edit', edit_encounter_enemy_path(encounter_enemy) %></td>
+    <td><%= link_to 'Destroy', encounter_enemy, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Encounter enemy', new_encounter_enemy_path %>

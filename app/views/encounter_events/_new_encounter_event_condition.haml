@@ -1,0 +1,7 @@
+%div{:id => "add-encounter-event-condition-choice-#{encounter_event.id}"}
+  What kind of condition do you want to add?
+
+  %ul
+    %li= link_to 'Skill Check', new_encounter_event_skill_check_condition_path(:encounter_event_id => encounter_event.id), :id => "add-encounter-event-skill-check-condition-link-#{encounter_event.id}"
+    %li= link_to 'Miscellaneous Condition', new_encounter_event_miscellaneous_condition_path(:encounter_event_id => encounter_event.id), :id => "add-encounter-event-miscellaneous-condition-link-#{encounter_event.id}"
+    

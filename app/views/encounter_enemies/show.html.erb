@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Encounter:</b>
+  <%= @encounter_enemy.encounter_id %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @encounter_enemy.name %>
+</p>
+
+<p>
+  <b>Number:</b>
+  <%= @encounter_enemy.number %>
+</p>
+
+<p>
+  <b>Abbreviation:</b>
+  <%= @encounter_enemy.abbreviation %>
+</p>
+
+<p>
+  <b>Xp:</b>
+  <%= @encounter_enemy.xp %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @encounter_enemy.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_encounter_enemy_path(@encounter_enemy) %> |
+<%= link_to 'Back', encounter_enemies_path %>

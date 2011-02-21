@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Encounter:</b>
+  <%= @encounter_area_feature.encounter_id %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @encounter_area_feature.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @encounter_area_feature.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_encounter_area_feature_path(@encounter_area_feature) %> |
+<%= link_to 'Back', encounter_area_features_path %>

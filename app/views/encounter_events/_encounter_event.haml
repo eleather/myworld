@@ -1,0 +1,28 @@
+:javascript
+  jQuery(function() {
+    jQuery("#add-encounter-event-condition-dialog-#{encounter_event.id}").dialog({
+      autoOpen: false,
+      modal: true,
+      buttons: {
+        Cancel: function() {
+          $(this).dialog("close");
+        }
+      }
+    });
+    
+    jQuery("#add-encounter-event-condition-#{encounter_event.id}")
+      .button()
+      .click(function() {
+        jQuery("#add-encounter-event-condition-dialog-#{encounter_event.id}").dialog("open");
+      });
+  });
+
+.tab-sub-section
+  %b= "When #{encounter_event.when}, read:"
+  %div= encounter_event.text_to_read
+  = render encounter_event.encounter_event_miscellaneous_conditions
+  = render encounter_event.encounter_event_skill_check_conditions
+  %div{:id => "add-encounter-event-condition-#{encounter_event.id}"} Add Condition
+  
+  %div{:id => "add-encounter-event-condition-dialog-#{encounter_event.id}", :title => "Add Condition"}
+    = render :partial => 'encounter_events/new_encounter_event_condition', :locals => {:encounter_event => encounter_event}

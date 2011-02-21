@@ -1,0 +1,33 @@
+<%= form_for(@encounter_event_skill_check_condition) do |f| %>
+  <% if @encounter_event_skill_check_condition.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@encounter_event_skill_check_condition.errors.count, "error") %> prohibited this encounter_event_skill_check_condition from being saved:</h2>
+
+      <ul>
+      <% @encounter_event_skill_check_condition.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :encounter_event_id %><br />
+    <%= f.text_field :encounter_event_id %>
+  </div>
+  <div class="field">
+    <%= f.label :skill %><br />
+    <%= f.text_field :skill %>
+  </div>
+  <div class="field">
+    <%= f.label :dc %><br />
+    <%= f.text_field :dc %>
+  </div>
+  <div class="field">
+    <%= f.label :result_text %><br />
+    <%= f.text_area :result_text %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

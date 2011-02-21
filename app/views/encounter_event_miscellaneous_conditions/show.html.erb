@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Encounter event:</b>
+  <%= @encounter_event_miscellaneous_condition.encounter_event_id %>
+</p>
+
+<p>
+  <b>Condition text:</b>
+  <%= @encounter_event_miscellaneous_condition.condition_text %>
+</p>
+
+<p>
+  <b>Result text:</b>
+  <%= @encounter_event_miscellaneous_condition.result_text %>
+</p>
+
+
+<%= link_to 'Edit', edit_encounter_event_miscellaneous_condition_path(@encounter_event_miscellaneous_condition) %> |
+<%= link_to 'Back', encounter_event_miscellaneous_conditions_path %>

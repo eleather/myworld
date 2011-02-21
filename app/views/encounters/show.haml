@@ -1,0 +1,38 @@
+.tab-title= @encounter.name
+
+%p
+  %b 
+    Encounter Level 
+    = @encounter.level
+    = "(#{@encounter.xp}"
+    XP)
+    
+.tab-section
+  = render @encounter.encounter_enemies
+  = link_to 'Add Encounter Enemy', new_encounter_enemy_path(:encounter_id => @encounter.id)
+
+.tab-section
+  .tab-section-title Setup
+  = @encounter.setup
+  
+  %div
+    = render @encounter.encounter_events
+    = link_to 'Add Encounter Event', new_encounter_event_path(:encounter_id => @encounter.id)
+
+.tab-section
+  .tab-section-title Tactics
+  = @encounter.tactics
+  
+.tab-section
+  .tab-section-title Area Features
+  = render@encounter.encounter_area_features
+  = link_to 'Add Area Feature', new_encounter_area_feature_path(:encounter_id => @encounter.id)
+  
+- if @encounter.conclusion
+  .tab-section
+    .tab-section-title Conclusion
+    = @encounter.conclusion
+
+
+= link_to 'Edit', edit_encounter_path(@encounter)
+

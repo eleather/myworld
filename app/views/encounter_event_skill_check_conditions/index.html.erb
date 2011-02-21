@@ -1,0 +1,29 @@
+<h1>Listing encounter_event_skill_check_conditions</h1>
+
+<table>
+  <tr>
+    <th>Encounter event</th>
+    <th>Skill</th>
+    <th>Dc</th>
+    <th>Result text</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @encounter_event_skill_check_conditions.each do |encounter_event_skill_check_condition| %>
+  <tr>
+    <td><%= encounter_event_skill_check_condition.encounter_event_id %></td>
+    <td><%= encounter_event_skill_check_condition.skill %></td>
+    <td><%= encounter_event_skill_check_condition.dc %></td>
+    <td><%= encounter_event_skill_check_condition.result_text %></td>
+    <td><%= link_to 'Show', encounter_event_skill_check_condition %></td>
+    <td><%= link_to 'Edit', edit_encounter_event_skill_check_condition_path(encounter_event_skill_check_condition) %></td>
+    <td><%= link_to 'Destroy', encounter_event_skill_check_condition, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Encounter event skill check condition', new_encounter_event_skill_check_condition_path %>

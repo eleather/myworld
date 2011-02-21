@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Encounter event:</b>
+  <%= @encounter_event_skill_check_condition.encounter_event_id %>
+</p>
+
+<p>
+  <b>Skill:</b>
+  <%= @encounter_event_skill_check_condition.skill %>
+</p>
+
+<p>
+  <b>Dc:</b>
+  <%= @encounter_event_skill_check_condition.dc %>
+</p>
+
+<p>
+  <b>Result text:</b>
+  <%= @encounter_event_skill_check_condition.result_text %>
+</p>
+
+
+<%= link_to 'Edit', edit_encounter_event_skill_check_condition_path(@encounter_event_skill_check_condition) %> |
+<%= link_to 'Back', encounter_event_skill_check_conditions_path %>

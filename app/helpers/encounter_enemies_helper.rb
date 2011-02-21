@@ -1,0 +1,2 @@
+module EncounterEnemiesHelper
+end

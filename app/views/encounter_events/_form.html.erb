@@ -1,0 +1,28 @@
+<%= form_for(@encounter_event) do |f| %>
+  <% if @encounter_event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@encounter_event.errors.count, "error") %> prohibited this encounter_event from being saved:</h2>
+
+      <ul>
+      <% @encounter_event.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.hidden_field :encounter_id %>
+  </div>
+  <div class="field">
+    <%= f.label :when %><br />
+    <%= f.text_area :when %>
+  </div>
+  <div class="field">
+    <%= f.label :text_to_read %><br />
+    <%= f.text_area :text_to_read %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

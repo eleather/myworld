@@ -1,0 +1,27 @@
+<h1>Listing encounter_events</h1>
+
+<table>
+  <tr>
+    <th>Encounter</th>
+    <th>When</th>
+    <th>Text to read</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @encounter_events.each do |encounter_event| %>
+  <tr>
+    <td><%= encounter_event.encounter_id %></td>
+    <td><%= encounter_event.when %></td>
+    <td><%= encounter_event.text_to_read %></td>
+    <td><%= link_to 'Show', encounter_event %></td>
+    <td><%= link_to 'Edit', edit_encounter_event_path(encounter_event) %></td>
+    <td><%= link_to 'Destroy', encounter_event, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Encounter event', new_encounter_event_path %>

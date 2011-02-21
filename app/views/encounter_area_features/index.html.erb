@@ -1,0 +1,27 @@
+<h1>Listing encounter_area_features</h1>
+
+<table>
+  <tr>
+    <th>Encounter</th>
+    <th>Name</th>
+    <th>Description</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @encounter_area_features.each do |encounter_area_feature| %>
+  <tr>
+    <td><%= encounter_area_feature.encounter_id %></td>
+    <td><%= encounter_area_feature.name %></td>
+    <td><%= encounter_area_feature.description %></td>
+    <td><%= link_to 'Show', encounter_area_feature %></td>
+    <td><%= link_to 'Edit', edit_encounter_area_feature_path(encounter_area_feature) %></td>
+    <td><%= link_to 'Destroy', encounter_area_feature, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Encounter area feature', new_encounter_area_feature_path %>

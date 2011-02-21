@@ -1,0 +1,27 @@
+<h1>Listing encounter_event_miscellaneous_conditions</h1>
+
+<table>
+  <tr>
+    <th>Encounter event</th>
+    <th>Condition text</th>
+    <th>Result text</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @encounter_event_miscellaneous_conditions.each do |encounter_event_miscellaneous_condition| %>
+  <tr>
+    <td><%= encounter_event_miscellaneous_condition.encounter_event_id %></td>
+    <td><%= encounter_event_miscellaneous_condition.condition_text %></td>
+    <td><%= encounter_event_miscellaneous_condition.result_text %></td>
+    <td><%= link_to 'Show', encounter_event_miscellaneous_condition %></td>
+    <td><%= link_to 'Edit', edit_encounter_event_miscellaneous_condition_path(encounter_event_miscellaneous_condition) %></td>
+    <td><%= link_to 'Destroy', encounter_event_miscellaneous_condition, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Encounter event miscellaneous condition', new_encounter_event_miscellaneous_condition_path %>
