@@ -1,7 +1,9 @@
-.tab-title Your Adventures
-
-- @adventures.group_by(&:level).each do |level, level_adventures|
-  .tab-section
-    .tab-section-title= "Level #{level}"
-    - level_adventures.each do |adventure|
-      = link_to adventure.name, adventure
+- if @adventures.any?
+  - @adventures.group_by(&:level).each do |level, level_adventures|
+    .tab-section
+      .tab-section-title= "Level #{level}"
+      - level_adventures.each do |adventure|
+        = link_to adventure.name, adventure
+        = "(#{adventure.xp} XP)"
+- else
+  You don't have any adventures yet - please add one to get started.

@@ -5,6 +5,7 @@ class AdventuresController < ApplicationController
   # GET /adventures.xml
   def index
     @adventures = Adventure.all
+    @title = "Your Adventures"
 
     respond_to do |format|
       format.html # index.html.erb
@@ -16,7 +17,7 @@ class AdventuresController < ApplicationController
   # GET /adventures/1.xml
   def show
     @adventure = Adventure.find(params[:id])
-    @title = @adventure.name + " - Invent"
+    @title = @adventure.name
 
     respond_to do |format|
       format.html # show.html.erb

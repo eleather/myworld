@@ -1,0 +1,19 @@
+:javascript
+  jQuery(function() {
+    jQuery("#title-bar").button();
+    jQuery("#home-nav-button").button();
+  });
+
+#header
+  - if @title
+    #title-bar.float-left= @title
+  #navigation.float-right
+    %a#home-nav-button{:href => root_path} Home
+
+  .clear-both
+
+  - if notice
+    .notice.ui-widget
+      .ui-state-highlight.ui-corner-all
+        %span.ui-icon.ui-icon-info
+        %span= notice

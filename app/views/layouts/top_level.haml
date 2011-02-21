@@ -1,6 +1,6 @@
 %html
   %head
-    %title= @title || 'Invent'
+    %title= [@title, 'Invent'].compact.join(' - ')
     = stylesheet_link_tag :all
     = stylesheet_link_tag 'controllers/' + controller.controller_name
     = javascript_include_tag 'http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js'
@@ -10,11 +10,6 @@
       jQuery.noConflict();
     
   %body
-    - if notice
-      .notice.ui-widget
-        .ui-state-highlight.ui-corner-all
-          %span.ui-icon.ui-icon-info
-          %span= notice
-  
+    = render :partial => 'layouts/header'
     = yield
 

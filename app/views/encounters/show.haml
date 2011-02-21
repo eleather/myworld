@@ -1,4 +1,14 @@
-.tab-title= @encounter.name
+:javascript
+  jQuery(function() {
+    jQuery("#edit-encounter").button();
+  });
+
+.tab-header
+  .tab-title.float-left= @encounter.name
+  %a#edit-encounter.icon-button.float-left{:href => edit_encounter_path(@encounter)}
+    .ui-icon.ui-icon-pencil
+  .clear-both
+
 
 %p
   %b 
@@ -32,7 +42,4 @@
   .tab-section
     .tab-section-title Conclusion
     = @encounter.conclusion
-
-
-= link_to 'Edit', edit_encounter_path(@encounter)
 
