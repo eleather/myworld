@@ -1,5 +1,5 @@
 .tab-sub-section
-  %b= "#{encounter_event_skill_check_condition.skill} Check"
+  %b= "#{EncounterEventSkillCheckCondition::SKILLS.invert[encounter_event_skill_check_condition.skill.raw_value].to_s.titleize} Check"
   %div
     %b= "DC #{encounter_event_skill_check_condition.dc}: "
     = encounter_event_skill_check_condition.result_text

@@ -12,12 +12,11 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :encounter_event_id %><br />
-    <%= f.text_field :encounter_event_id %>
+    <%= f.hidden_field :encounter_event_id %>
   </div>
   <div class="field">
     <%= f.label :skill %><br />
-    <%= f.text_field :skill %>
+    <%= f.select :skill, EncounterEventSkillCheckCondition::SKILLS.to_a %>
   </div>
   <div class="field">
     <%= f.label :dc %><br />

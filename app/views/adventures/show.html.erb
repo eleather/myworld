@@ -1,12 +1,13 @@
 <script>
 	jQuery(function() {
-		jQuery("#tabs").tabs({
+		jQuery('#tabs').tabs({
       load: function(event, ui) {
         jQuery('a', ui.panel).click(function() {
           jQuery(ui.panel).load(this.href);
           return false;
         });
-      }
+      },
+      selected: <%= @selected_tab || 0 %>
     });
 	});
 </script>
@@ -22,7 +23,7 @@
    
   <div id="tabs-1">
     <p>
-      <b>An adventure for five <%= @adventure.level %>th-level adventurers</b>
+      <b>An adventure for five <%= @adventure.level.ordinalize %>-level adventurers</b>
     </p>
 
     <div class='tab-section'>

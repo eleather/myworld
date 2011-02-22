@@ -1,11 +1,17 @@
 :javascript
   jQuery(function() {
-    jQuery("#edit-encounter").button();
+    jQuery('#edit-encounter-#{@encounter.id}-button').button();
+    
+    jQuery('#add-encounter-enemy-#{@encounter.id}-button').button();
+    
+    jQuery('#add-encounter-event-#{@encounter.id}-button').button();
+    
+    jQuery('#add-encounter-area-feature-#{@encounter.id}-button').button();
   });
 
 .tab-header
   .tab-title.float-left= @encounter.name
-  %a#edit-encounter.icon-button.float-left{:href => edit_encounter_path(@encounter)}
+  %a.icon-button.float-left{:href => edit_encounter_path(@encounter), :id => "edit-encounter-#{@encounter.id}-button"}
     .ui-icon.ui-icon-pencil
   .clear-both
 
@@ -19,7 +25,7 @@
     
 .tab-section
   = render @encounter.encounter_enemies
-  = link_to 'Add Encounter Enemy', new_encounter_enemy_path(:encounter_id => @encounter.id)
+  %div{:id => "add-encounter-enemy-#{@encounter.id}-button"}= link_to 'Add Enemy', new_encounter_enemy_path(:encounter_id => @encounter.id)
 
 .tab-section
   .tab-section-title Setup
@@ -27,7 +33,7 @@
   
   %div
     = render @encounter.encounter_events
-    = link_to 'Add Encounter Event', new_encounter_event_path(:encounter_id => @encounter.id)
+    %div{:id => "add-encounter-event-#{@encounter.id}-button"}= link_to 'Add Encounter Event', new_encounter_event_path(:encounter_id => @encounter.id)
 
 .tab-section
   .tab-section-title Tactics
@@ -36,7 +42,7 @@
 .tab-section
   .tab-section-title Area Features
   = render@encounter.encounter_area_features
-  = link_to 'Add Area Feature', new_encounter_area_feature_path(:encounter_id => @encounter.id)
+  %div{:id => "add-encounter-area-feature-#{@encounter.id}-button"}= link_to 'Add Area Feature', new_encounter_area_feature_path(:encounter_id => @encounter.id)
   
 - if @encounter.conclusion
   .tab-section

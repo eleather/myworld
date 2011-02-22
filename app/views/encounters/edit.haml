@@ -1,5 +1,14 @@
-.tab-title Editing Encounter
+:javascript
+  jQuery(function() {
+    jQuery('#edit-encounter-#{@encounter.id}-cancel-button').button();
+  });
+
+.tab-header
+  %a.icon-button.float-left{:href => adventure_path(@encounter.adventure), :id => "#edit-encounter-#{@encounter.id}-cancel-button"}
+    .ui-icon.ui-icon-circle-arrow-w
+  .tab-title.float-left= "Editing #{@encounter.name}"
+  .clear-both
 
 = render 'form'
 
-= link_to 'Cancel', @encounter
+= link_to 'Cancel', @encounter.adventure
