@@ -1,6 +1,10 @@
 :javascript
   jQuery(function() {
-    jQuery('#edit-encounter-#{@encounter.id}-button').button();
+    jQuery('#edit-encounter-#{@encounter.id}-button')
+      .button()
+      .bind('click', function() {
+        loadUrlInActiveTab('#{edit_encounter_path(@encounter)}');
+      });
     
     jQuery('#add-encounter-enemy-#{@encounter.id}-button').button();
     
@@ -29,7 +33,7 @@
 
 .tab-section
   .tab-section-title Setup
-  = @encounter.setup
+  = render :partial => 'shared/paragraph_text', :locals => {:text => @encounter.setup}
   
   %div
     = render @encounter.encounter_events
@@ -37,15 +41,15 @@
 
 .tab-section
   .tab-section-title Tactics
-  = @encounter.tactics
+  = render :partial => 'shared/paragraph_text', :locals => {:text =>  @encounter.tactics}
   
 .tab-section
   .tab-section-title Area Features
-  = render@encounter.encounter_area_features
+  = render @encounter.encounter_area_features
   %div{:id => "add-encounter-area-feature-#{@encounter.id}-button"}= link_to 'Add Area Feature', new_encounter_area_feature_path(:encounter_id => @encounter.id)
   
 - if @encounter.conclusion
   .tab-section
     .tab-section-title Conclusion
-    = @encounter.conclusion
+    = render :partial => 'shared/paragraph_text', :locals => {:text => @encounter.conclusion}
 

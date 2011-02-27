@@ -1,0 +1,19 @@
+:javascript
+  jQuery(function($) {
+    jQuery("#my-form")
+      .bind("ajax:complete", function(et, e) {
+        jQuery("#result").html(e.responseText);
+      });
+  });
+
+.box#box-1
+  .box#box-2
+    .box#box-3
+      = form_tag '/adventures/check_availability', :id => 'my-form', :remote => true do
+        .field
+          = label_tag :name
+          #name-entry= text_field_tag :name
+        .actions
+          = submit_tag 'Check Availability'
+          
+  .box#result

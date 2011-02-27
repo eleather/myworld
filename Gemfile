@@ -23,9 +23,13 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 # gem 'sqlite3-ruby', :require => 'sqlite3'
 # gem 'aws-s3', :require => 'aws/s3'
 
+# Bundle authentication gems:
+gem 'devise'
+
 # Bundle the UI/layout gems:
 gem 'haml'
 gem 'sass'
+gem 'jquery-rails', '>= 0.2.6'
 
 # Bundle extensions to ActiveRecord:
 gem 'has_enumeration'

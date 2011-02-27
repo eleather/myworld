@@ -1,0 +1,14 @@
+:javascript
+  jQuery(function() {
+    jQuery('#edit-adventure-cancel-button')
+      .button()
+      .bind('click', function() {
+        loadUrlInActiveTab('#{adventure_show_basics_path(@adventure)}');
+      });
+  });
+
+.tab-title= "Editing \"#{@adventure.name}\""
+
+= render 'form'
+
+#edit-adventure-cancel-button Cancel

@@ -1,5 +1,5 @@
 class MainController < ApplicationController
-  layout 'top_level', :only => ['index']
+  layout 'application', :only => ['index']
   
   def index
     @title = 'Your Adventures'

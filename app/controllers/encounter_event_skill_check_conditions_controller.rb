@@ -41,7 +41,7 @@ class EncounterEventSkillCheckConditionsController < ApplicationController
   # POST /encounter_event_skill_check_conditions
   # POST /encounter_event_skill_check_conditions.xml
   def create
-    params[:encounter_event_skill_check_condition][:skill] = params[:encounter_event_skill_check_condition][:skill].to_sym
+    params[:encounter_event_skill_check_condition][:skill] = EncounterEventSkillCheckCondition::SKILLS.invert[params[:encounter_event_skill_check_condition][:skill].to_i]
     @encounter_event_skill_check_condition = EncounterEventSkillCheckCondition.new(params[:encounter_event_skill_check_condition])
     
     respond_to do |format|

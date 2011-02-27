@@ -1,14 +1,14 @@
 :javascript
   jQuery(function() {
-    jQuery('#edit-encounter-#{@encounter.id}-cancel-button').button();
+    jQuery("#edit-encounter-#{@encounter.id}-cancel-button")
+      .button()
+      .bind('click', function() {
+        loadUrlInActiveTab('#{adventure_path(@encounter.adventure)}');
+      });
   });
 
-.tab-header
-  %a.icon-button.float-left{:href => adventure_path(@encounter.adventure), :id => "#edit-encounter-#{@encounter.id}-cancel-button"}
-    .ui-icon.ui-icon-circle-arrow-w
-  .tab-title.float-left= "Editing #{@encounter.name}"
-  .clear-both
+.tab-title= "Editing #{@encounter.name}"
 
 = render 'form'
 
-= link_to 'Cancel', @encounter.adventure
+%div{:id => "edit-encounter-#{@encounter.id}-cancel-button"} Cancel

@@ -1,4 +1,9 @@
 Myworld::Application.routes.draw do
+  
+  match 'adventures/check_availability' => 'adventures#check_availability'
+  
+  devise_for :users
+
   resources :encounter_enemies
 
   resources :encounter_area_features
@@ -9,7 +14,9 @@ Myworld::Application.routes.draw do
 
   resources :encounter_events
 
-  resources :adventures
+  resources :adventures do
+    match 'show_basics' => 'adventures#show_basics'
+  end
   
   resources :encounters  
 

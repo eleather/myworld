@@ -11,26 +11,33 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+  <div class="tab-section">
+    <div class="field">
+      <%= f.label :name %><br />
+      <%= f.text_field :name %>
+    </div>
+    <div class="field">
+      <%= f.label :level %><br />
+      <%= f.text_field :level %>
+    </div>
+    <div class="field">
+      <%= f.label :description %><br />
+      <%= f.text_area :description %>
+    </div>
+    <div class="field">
+      <%= f.label :tiles %><br />
+      <%= f.text_field :tiles %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :level %><br />
-    <%= f.text_field :level %>
+  
+  <div class="tab-section">
+    <div class="tab-section-title">Expanding the Adventure</div>
+    <div class="field">
+      <%= f.label :expanding_description %><br />
+      <%= f.text_area :expanding_description %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :tiles %><br />
-    <%= f.text_field :tiles %>
-  </div>
-  <div class="field">
-    <%= f.label :expanding_description %><br />
-    <%= f.text_area :expanding_description %>
-  </div>
+  
   <div class="actions">
     <%= f.submit %>
   </div>

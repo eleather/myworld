@@ -1,0 +1,24 @@
+:javascript
+  jQuery(function() {
+    jQuery('#edit-adventure-button').button()
+    .bind('click', function() {
+      loadUrlInActiveTab('#{edit_adventure_path(@adventure)}');
+    });
+  });
+
+%p
+  %b= "An adventure for five #{@adventure.level.ordinalize}-level adventurers"
+
+
+.tab-section
+  = render :partial => 'shared/paragraph_text', :locals => {:text => @adventure.description}
+  %div
+    %b Tiles:
+    = @adventure.tiles
+
+
+.tab-section
+  .tab-section-title Expanding the Adventure
+  = render :partial => 'shared/paragraph_text', :locals => {:text => @adventure.expanding_description}
+
+#edit-adventure-button Edit

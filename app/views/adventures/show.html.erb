@@ -1,4 +1,10 @@
 <script>
+  function loadUrlInActiveTab(url) {
+    var selected = jQuery('#tabs').tabs('option', 'selected');
+    jQuery('#tabs').tabs('url', selected, url);
+    jQuery('#tabs').tabs('load', selected);
+  }
+
 	jQuery(function() {
 		jQuery('#tabs').tabs({
       load: function(event, ui) {
@@ -14,31 +20,10 @@
 
 <div id="tabs">
   <ul>
-    <li><a href="#tabs-1">Basics</a></li>
+    <li><a href="<%= adventure_show_basics_path(@adventure) %>">Basics</a></li>
     <% @adventure.encounters.each do |encounter| %>
       <li><a href="<%= encounter_path(encounter) %>">Encounter: <%= encounter.name %></a></li>
     <% end %>
     <li><a href="<%= new_encounter_path(:adventure_id => @adventure.id) %>">+ Add Encounter</a></li>
   </ul>
-   
-  <div id="tabs-1">
-    <p>
-      <b>An adventure for five <%= @adventure.level.ordinalize %>-level adventurers</b>
-    </p>
-
-    <div class='tab-section'>
-      <div><%= @adventure.description %></div>
-      <div>
-        <b>Tiles:</b>
-        <%= @adventure.tiles %>
-      </div>
-    </div>
-    
-    <div class='tab-section'>
-      <div class='tab-section-title'>Expanding the Adventure</div>
-      <div><%= @adventure.expanding_description %></div>
-    </div>
-    
-    <%= link_to 'Edit', edit_adventure_path(@adventure) %>
-  </div>
 </div>

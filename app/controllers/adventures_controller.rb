@@ -1,10 +1,14 @@
 class AdventuresController < ApplicationController
-  layout 'top_level', :only => ['show']
+  layout 'application', :only => ['show']
+  
+  def check_availability
+    render :text => 'got it!'
+  end
   
   # GET /adventures
   # GET /adventures.xml
   def index
-    @adventures = Adventure.all
+    @adventures = current_user.adventures
     
     @title = "Your Adventures"
 
@@ -85,6 +89,15 @@ class AdventuresController < ApplicationController
     respond_to do |format|
       format.html { redirect_to(adventures_url) }
       format.xml  { head :ok }
+    end
+  end
+  
+  # GET /adventures/1/show_basics
+  def show_basics
+    @adventure = Adventure.find(params[:adventure_id])
+    
+    respond_to do |format|
+      format.html # show_basics.haml
     end
   end
 end

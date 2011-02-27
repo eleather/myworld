@@ -1,7 +1,9 @@
 :javascript
   jQuery(function() {
     jQuery("#title-bar").button();
+    
     jQuery("#home-nav-button").button();
+    jQuery("#logout-nav-button").button();
   });
 
 #header
@@ -9,6 +11,7 @@
     #title-bar.float-left= @title
   #navigation.float-right
     %a#home-nav-button{:href => root_path} Your Adventures
+    %a#logout-nav-button{:href => destroy_user_session_path} Logout
 
   .clear-both
 
@@ -17,3 +20,10 @@
       .ui-state-highlight.ui-corner-all
         %span.ui-icon.ui-icon-info
         %span= notice
+        
+  - if alert
+    .notice.ui-widget
+      .ui-state-highlight.ui-corner-all
+        %span.ui-icon.ui-icon-info
+        %span Alert:
+        %span= alert
