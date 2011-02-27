@@ -6,7 +6,8 @@
         loadUrlInActiveTab('#{edit_encounter_path(@encounter)}');
       });
     
-    jQuery('#add-encounter-enemy-#{@encounter.id}-button').button();
+    jQuery('#add-encounter-enemy-#{@encounter.id}-button')
+      .button();
     
     jQuery('#add-encounter-event-#{@encounter.id}-button').button();
     
