@@ -1,0 +1,21 @@
+:javascript
+  jQuery(function() {
+    jQuery('#add-encounter-enemy-#{@encounter.id}-button')
+      .button()
+      .bind("ajax:complete", function(et, e) {
+        jQuery("#add-encounter-enemy-#{@encounter.id}-dialog").html(e.responseText);
+        jQuery("#add-encounter-enemy-#{@encounter.id}-dialog").dialog({
+          autoOpen: false,
+          modal: true,
+          buttons: {
+            Cancel: function() {
+              jQuery(this).dialog("close");
+            }
+          }
+        });
+        jQuery("#add-encounter-enemy-#{@encounter.id}-dialog").dialog("open");
+      })
+  });
+
+%div{:id => "add-encounter-enemy-#{@encounter.id}-button"}= link_to 'Add Enemy', new_encounter_enemy_path(:encounter_id => @encounter.id), :remote => true
+.hidden{:id => "add-encounter-enemy-#{@encounter.id}-dialog", :title => "Add Enemy"}

@@ -4,10 +4,7 @@
       .button()
       .bind('click', function() {
         loadUrlInActiveTab('#{edit_encounter_path(@encounter)}');
-      });
-    
-    jQuery('#add-encounter-enemy-#{@encounter.id}-button')
-      .button();
+      }); 
     
     jQuery('#add-encounter-event-#{@encounter.id}-button').button();
     
@@ -30,7 +27,7 @@
     
 .tab-section
   = render @encounter.encounter_enemies
-  %div{:id => "add-encounter-enemy-#{@encounter.id}-button"}= link_to 'Add Enemy', new_encounter_enemy_path(:encounter_id => @encounter.id)
+  = render :partial => 'shared/dialog_form'
 
 .tab-section
   .tab-section-title Setup
