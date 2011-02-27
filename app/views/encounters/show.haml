@@ -7,8 +7,6 @@
       }); 
     
     jQuery('#add-encounter-event-#{@encounter.id}-button').button();
-    
-    jQuery('#add-encounter-area-feature-#{@encounter.id}-button').button();
   });
 
 .tab-header
@@ -27,7 +25,7 @@
     
 .tab-section
   = render @encounter.encounter_enemies
-  = render :partial => 'shared/dialog_form'
+  = render :partial => 'shared/dialog_form', :locals => {:title => 'Add Enemy', :id_text => "add-encounter-enemy-#{@encounter.id}", :url => new_encounter_enemy_path(:encounter_id => @encounter.id)}
 
 .tab-section
   .tab-section-title Setup
@@ -35,7 +33,7 @@
   
   %div
     = render @encounter.encounter_events
-    %div{:id => "add-encounter-event-#{@encounter.id}-button"}= link_to 'Add Encounter Event', new_encounter_event_path(:encounter_id => @encounter.id)
+    = render :partial => 'shared/dialog_form', :locals => {:title => 'Add Encounter Event', :id_text => "add-encounter-event-#{@encounter.id}", :url => new_encounter_event_path(:encounter_id => @encounter.id)}
 
 .tab-section
   .tab-section-title Tactics
@@ -44,7 +42,7 @@
 .tab-section
   .tab-section-title Area Features
   = render @encounter.encounter_area_features
-  %div{:id => "add-encounter-area-feature-#{@encounter.id}-button"}= link_to 'Add Area Feature', new_encounter_area_feature_path(:encounter_id => @encounter.id)
+  = render :partial => 'shared/dialog_form', :locals => {:title => 'Add Area Feature', :id_text => "add-encounter-area-feature-#{@encounter.id}", :url => new_encounter_area_feature_path(:encounter_id => @encounter.id)}
   
 - if @encounter.conclusion
   .tab-section

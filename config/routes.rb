@@ -12,7 +12,9 @@ Myworld::Application.routes.draw do
 
   resources :encounter_event_miscellaneous_conditions
 
-  resources :encounter_events
+  resources :encounter_events do
+    match 'new_encounter_event_condition' => 'encounter_events#new_encounter_event_condition'
+  end
 
   resources :adventures do
     match 'show_basics' => 'adventures#show_basics'

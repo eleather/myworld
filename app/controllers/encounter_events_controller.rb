@@ -81,4 +81,14 @@ class EncounterEventsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  # GET /encounter_events/1/new_encounter_event_condition
+  # TODO: GET /encounter_events/1/new_encounter_event_condition.xml
+  def new_encounter_event_condition
+    @encounter_event = EncounterEvent.find(params[:encounter_event_id])
+    
+    respond_to do |format|
+      format.html # new_encounter_event_condition.haml
+    end
+  end
 end
