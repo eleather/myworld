@@ -1,0 +1,8 @@
+- if @worlds.any?
+  .tab-section
+    - @worlds.each do |world|
+      = link_to world.name, world
+      
+- else
+  You don't have any worlds yet - please add one to get started.
+

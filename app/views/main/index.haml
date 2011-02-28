@@ -1,11 +1,15 @@
 :javascript
   jQuery(function() {
-    jQuery("#tabs").tabs();
+    jQuery("#tabs").tabs({
+      selected: #{ @selected_tab || 0 }
+    });
   });
 
 #tabs
   %ul
     %li
+      %a{:href => worlds_path} Your Worlds
+    %li
       %a{:href => adventures_path} Your Adventures
     %li
-      %a{:href => new_adventure_path} + Add Adventure
+      %a{:href => new_world_path} + Add World

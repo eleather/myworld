@@ -2,6 +2,7 @@ class MainController < ApplicationController
   layout 'application', :only => ['index']
   
   def index
-    @title = 'Your Adventures'
+    @title = 'Home'
+    @selected_tab = params[:tab]
   end
 end

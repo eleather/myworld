@@ -1,5 +1,9 @@
 Myworld::Application.routes.draw do
   
+  resources :worlds do
+    match 'show_basics' => 'worlds#show_basics'
+  end
+
   match 'adventures/check_availability' => 'adventures#check_availability'
   
   devise_for :users

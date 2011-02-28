@@ -1,0 +1,12 @@
+:javascript
+  jQuery(function() {
+    jQuery('#edit-world-button').button()
+    .bind('click', function() {
+      loadUrlInActiveTab('#{edit_world_path(@world)}');
+    });
+  });
+
+.tab-section
+  = render :partial => 'shared/paragraph_text', :locals => {:text => @world.description}
+
+#edit-world-button Edit

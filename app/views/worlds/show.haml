@@ -1,0 +1,19 @@
+:javascript
+  function loadUrlInActiveTab(url) {
+    var selected = jQuery('#tabs').tabs('option', 'selected');
+    jQuery('#tabs').tabs('url', selected, url);
+    jQuery('#tabs').tabs('load', selected);
+  }
+
+  jQuery(function() {
+    jQuery('#tabs').tabs({
+      selected: #{@selected_tab || 0}
+    });
+  });
+
+#tabs
+  %ul
+    %li
+      %a{:href => world_show_basics_path(@world)} Basics
+    %li
+      %a{:href => new_adventure_path(:world_id => @world.id)}+ Add Adventure

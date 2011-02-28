@@ -1,0 +1,14 @@
+:javascript
+  jQuery(function() {
+    jQuery('#edit-world-cancel-button')
+      .button()
+      .bind('click', function() {
+        loadUrlInActiveTab('#{world_show_basics_path(@world)}');
+      });
+  });
+
+.tab-title= "Editing \"#{@world.name}\""
+
+= render 'form'
+
+#edit-world-cancel-button Cancel

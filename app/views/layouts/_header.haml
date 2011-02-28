@@ -2,7 +2,8 @@
   jQuery(function() {
     jQuery("#title-bar").button();
     
-    jQuery("#home-nav-button").button();
+    jQuery("#your-worlds-nav-button").button();
+    jQuery("#your-adventures-nav-button").button();
     jQuery("#logout-nav-button").button();
   });
 
@@ -10,7 +11,8 @@
   - if @title
     #title-bar.float-left= @title
   #navigation.float-right
-    %a#home-nav-button{:href => root_path} Your Adventures
+    %a#your-worlds-nav-button{:href => root_path(:tab => 0)} Your Worlds
+    %a#your-adventures-nav-button{:href => root_path(:tab => 1)} Your Adventures
     %a#logout-nav-button{:href => destroy_user_session_path} Logout
 
   .clear-both
