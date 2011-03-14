@@ -1,12 +1,4 @@
-:javascript
-  jQuery(function() {
-    createLoadInActiveTabButton(jQuery("#edit-encounter-#{@encounter.id}-cancel-button"), '#{encounter_path(@encounter)}');
-  });
-
-%div
-  .tab-title.float-left= "Editing \"#{@encounter.name}\""
-  .float-left.margined{:id => "edit-encounter-#{@encounter.id}-cancel-button"} Cancel
-  .clear-both
+= render :partial => 'shared/tab_title_with_load_in_active_tab_button', :locals => {:title_text => "Editing #{@encounter.name}", :id_text => "edit-encounter-#{@encounter.id}-cancel-button", :url => encounter_path(@encounter)}
 
 = render 'form'
 

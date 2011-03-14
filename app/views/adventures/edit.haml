@@ -1,12 +1,4 @@
-:javascript
-  jQuery(function() {
-    createLoadInActiveTabButton(jQuery('#edit-adventure-cancel-button'), '#{adventure_show_basics_path(@adventure)}');
-  });
-
-%div
-  .tab-title.float-left= "Editing \"#{@adventure.name}\""
-  #edit-adventure-cancel-button.float-left.margined Cancel
-  .clear-both
+= render :partial => 'shared/tab_title_with_load_in_active_tab_button', :locals => {:title_text => "Editing \"#{@adventure.name}", :id_text => "edit-adventure-cancel-button", :url => adventure_show_basics_path(@adventure)}
 
 = render 'form'
 
