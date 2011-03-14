@@ -1,0 +1,4 @@
+= render :partial => 'shared/tab_title_with_load_in_active_tab_button', :locals => {:title_text => "Editing \"#{@encounter_area_feature.name}\"", :id_text => "edit-encounter-area-feature-#{@encounter_area_feature.id}-cancel-button", :url => encounter_path(@encounter_area_feature.encounter)}
+
+= render 'form'
+

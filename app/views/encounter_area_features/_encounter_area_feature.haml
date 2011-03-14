@@ -6,4 +6,5 @@
 .tab-sub-section
   %b= "#{encounter_area_feature.name}: "
   = encounter_area_feature.description
-  %span{:id => "edit-encounter-area-feature-#{encounter_area_feature.id}-button"} Edit
+  = render :partial => 'shared/dialog_form', :locals => {:title => 'Edit', :id_text => "edit-encounter-area-feature-#{encounter_area_feature.id}", :url => edit_encounter_area_feature_path(encounter_area_feature)}
+  
