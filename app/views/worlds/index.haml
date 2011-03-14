@@ -2,6 +2,7 @@
   .tab-section
     - @worlds.each do |world|
       = link_to world.name, world
+      = "(#{world.adventures.size} adventures)"
       
 - else
   You don't have any worlds yet - please add one to get started.
