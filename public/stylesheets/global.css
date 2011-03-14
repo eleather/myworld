@@ -10,6 +10,12 @@
 .clear-both {
   clear: both; }
 
+.margined {
+  margin: 5px; }
+
+.align-center {
+  text-align: center; }
+
 .icon-button {
   margin: 0px 5px;
   padding: 0px -5px; }
@@ -33,3 +39,6 @@
 
 .tab-sub-section {
   padding: 10px 0px; }
+
+#footer {
+  margin-top: 5px; }
