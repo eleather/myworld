@@ -52,6 +52,7 @@ class AdventuresController < ApplicationController
   # POST /adventures.xml
   def create
     @adventure = Adventure.new(params[:adventure])
+    @adventure.user = current_user
 
     respond_to do |format|
       if @adventure.save

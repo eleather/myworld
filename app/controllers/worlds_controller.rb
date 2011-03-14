@@ -62,6 +62,7 @@ class WorldsController < ApplicationController
   # PUT /worlds/1.xml
   def update
     @world = World.find(params[:id])
+    @world.user = current_user
 
     respond_to do |format|
       if @world.update_attributes(params[:world])
