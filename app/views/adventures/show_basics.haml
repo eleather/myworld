@@ -1,10 +1,9 @@
 :javascript
   jQuery(function() {
-    jQuery('#edit-adventure-button').button()
-    .bind('click', function() {
-      loadUrlInActiveTab('#{edit_adventure_path(@adventure)}');
-    });
+    createEditInActiveTabButton(jQuery('#edit-adventure-button'), '#{edit_adventure_path(@adventure)}');
   });
+
+#edit-adventure-button Edit
 
 %p
   %b= "An adventure for five #{@adventure.level.ordinalize}-level adventurers"
@@ -20,5 +19,3 @@
 .tab-section
   .tab-section-title Expanding the Adventure
   = render :partial => 'shared/paragraph_text', :locals => {:text => @adventure.expanding_description}
-
-#edit-adventure-button Edit

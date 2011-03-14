@@ -1,10 +1,6 @@
 :javascript
   jQuery(function() {
-    jQuery('#edit-encounter-button')
-    .button({icons: {primary:'ui-icon-pencil'} })
-    .bind('click', function() {
-      loadUrlInActiveTab('#{edit_encounter_path(@encounter)}');
-    });
+    createEditInActiveTabButton(jQuery('#edit-encounter-button'), '#{edit_encounter_path(@encounter)}');
   });
 
 .tab-header

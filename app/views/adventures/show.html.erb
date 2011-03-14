@@ -1,10 +1,4 @@
 <script>
-  function loadUrlInActiveTab(url) {
-    var selected = jQuery('#tabs').tabs('option', 'selected');
-    jQuery('#tabs').tabs('url', selected, url);
-    jQuery('#tabs').tabs('load', selected);
-  }
-
 	jQuery(function() {
 		jQuery('#tabs').tabs({
       selected: <%= @selected_tab || 0 %>
