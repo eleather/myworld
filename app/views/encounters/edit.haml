@@ -3,7 +3,7 @@
     jQuery("#edit-encounter-#{@encounter.id}-cancel-button")
       .button()
       .bind('click', function() {
-        loadUrlInActiveTab('#{adventure_path(@encounter.adventure)}');
+        loadUrlInActiveTab('#{encounter_path(@encounter)}');
       });
   });
 

@@ -1,7 +1,7 @@
 :javascript
   jQuery(function() {
     jQuery('#edit-encounter-button')
-    .button()
+    .button({icons: {primary:'ui-icon-pencil'} })
     .bind('click', function() {
       loadUrlInActiveTab('#{edit_encounter_path(@encounter)}');
     });
