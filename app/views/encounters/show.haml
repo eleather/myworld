@@ -1,18 +1,15 @@
 :javascript
   jQuery(function() {
-    jQuery('#edit-encounter-#{@encounter.id}-button')
-      .button()
-      .bind('click', function() {
-        loadUrlInActiveTab('#{edit_encounter_path(@encounter)}');
-      }); 
-    
-    jQuery('#add-encounter-event-#{@encounter.id}-button').button();
+    jQuery('#edit-encounter-button')
+    .button()
+    .bind('click', function() {
+      loadUrlInActiveTab('#{edit_encounter_path(@encounter)}');
+    });
   });
 
 .tab-header
   .tab-title.float-left= @encounter.name
-  %a.icon-button.float-left{:href => edit_encounter_path(@encounter), :id => "edit-encounter-#{@encounter.id}-button"}
-    .ui-icon.ui-icon-pencil
+  #edit-encounter-button.float-left.margined Edit
   .clear-both
 
 

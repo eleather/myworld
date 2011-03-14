@@ -55,7 +55,7 @@ class AdventuresController < ApplicationController
 
     respond_to do |format|
       if @adventure.save
-        format.html { redirect_to(@adventure, :notice => 'Adventure was successfully created.') }
+        format.html { redirect_to(@adventure, :notice => "Adventure #{@adventure.name} was successfully created.") }
         format.xml  { render :xml => @adventure, :status => :created, :location => @adventure }
       else
         format.html { render :action => "new" }
@@ -71,7 +71,7 @@ class AdventuresController < ApplicationController
 
     respond_to do |format|
       if @adventure.update_attributes(params[:adventure])
-        format.html { redirect_to(@adventure, :notice => 'Adventure was successfully updated.') }
+        format.html { redirect_to(@adventure, :notice => "Adventure #{@adventure.name} was successfully updated.") }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
