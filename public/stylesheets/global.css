@@ -1,6 +1,10 @@
+/* General classes to apply specific css features.
+ */
+/* Display classes. */
 .hidden {
   display: none; }
 
+/* Float classes. */
 .float-left {
   float: left; }
 
@@ -10,12 +14,16 @@
 .clear-both {
   clear: both; }
 
+/* Margins, padding, and other spacing. */
 .margined {
   margin: 5px; }
 
+/* Text alignment. */
 .align-center {
   text-align: center; }
 
+/* Common page layout classes.
+ */
 .icon-button {
   margin: 0px 5px;
   padding: 0px -5px; }
@@ -40,5 +48,13 @@
 .tab-sub-section {
   padding: 10px 0px; }
 
+/* Alterations to the standard formatting for HTML tags.
+ */
+textarea {
+  height: 10em;
+  width: 40em; }
+
+/* ID styling for /layout and /shared views.
+ */
 #footer {
   margin-top: 5px; }
