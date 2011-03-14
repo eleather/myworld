@@ -1,14 +1,13 @@
 :javascript
   jQuery(function() {
-    jQuery("#edit-encounter-#{@encounter.id}-cancel-button")
-      .button()
-      .bind('click', function() {
-        loadUrlInActiveTab('#{encounter_path(@encounter)}');
-      });
+    createLoadInActiveTabButton(jQuery("#edit-encounter-#{@encounter.id}-cancel-button"), '#{encounter_path(@encounter)}');
   });
 
-.tab-title= "Editing #{@encounter.name}"
+%div
+  .tab-title.float-left= "Editing \"#{@encounter.name}\""
+  .float-left.margined{:id => "edit-encounter-#{@encounter.id}-cancel-button"} Cancel
+  .clear-both
 
 = render 'form'
 
-%div{:id => "edit-encounter-#{@encounter.id}-cancel-button"} Cancel
+

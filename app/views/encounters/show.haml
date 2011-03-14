@@ -1,11 +1,11 @@
 :javascript
   jQuery(function() {
-    createEditInActiveTabButton(jQuery('#edit-encounter-button'), '#{edit_encounter_path(@encounter)}');
+    createEditInActiveTabButton(jQuery('#edit-encounter-#{@encounter.id}-button'), '#{edit_encounter_path(@encounter)}');
   });
 
 .tab-header
   .tab-title.float-left= @encounter.name
-  #edit-encounter-button.float-left.margined Edit
+  %span.float-left.margined{:id =>"edit-encounter-#{@encounter.id}-button"} Edit
   .clear-both
 
 

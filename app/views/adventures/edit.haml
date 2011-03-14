@@ -1,14 +1,13 @@
 :javascript
   jQuery(function() {
-    jQuery('#edit-adventure-cancel-button')
-      .button()
-      .bind('click', function() {
-        loadUrlInActiveTab('#{adventure_show_basics_path(@adventure)}');
-      });
+    createLoadInActiveTabButton(jQuery('#edit-adventure-cancel-button'), '#{adventure_show_basics_path(@adventure)}');
   });
 
-.tab-title= "Editing \"#{@adventure.name}\""
+%div
+  .tab-title.float-left= "Editing \"#{@adventure.name}\""
+  #edit-adventure-cancel-button.float-left.margined Cancel
+  .clear-both
 
 = render 'form'
 
-#edit-adventure-cancel-button Cancel
+

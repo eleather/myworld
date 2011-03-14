@@ -1,0 +1,9 @@
+:javascript
+  jQuery(function() {
+    createLoadInActiveTabButton(jQuery("##{id_text}"), '#{url}');
+  });
+
+%div
+  .tab-title.float-left= title_text
+  .float-left.margined{:id => id_text} Cancel
+  .clear-both

@@ -14,6 +14,14 @@ function loadUrlInActiveTab(url) {
 
 
 // Buttons that load in active tab.
+function createLoadInActiveTabButton(element, url) {
+  element
+  .button()
+  .bind('click', function() {
+    loadUrlInActiveTab(url);
+  });
+}
+
 function createLoadInActiveTabButtonWithIcon(element, icon, url) {
   element
   .button({icons: {primary: icon} })
