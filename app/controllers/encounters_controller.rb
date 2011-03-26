@@ -45,7 +45,7 @@ class EncountersController < ApplicationController
 
     respond_to do |format|
       if @encounter.save
-        format.html { redirect_to(@encounter.adventure, :notice => 'Encounter was successfully created.') }
+        format.html { redirect_to(adventure_path(@encounter.adventure) + "?tab=#{@encounter.adventure.encounters.size}", :notice => 'Encounter was successfully created.') }
         format.xml  { render :xml => @encounter, :status => :created, :location => @encounter }
       else
         format.html { render :action => "new" }
