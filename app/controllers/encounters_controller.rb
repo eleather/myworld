@@ -61,7 +61,7 @@ class EncountersController < ApplicationController
 
     respond_to do |format|
       if @encounter.update_attributes(params[:encounter])
-        format.html { redirect_to(@encounter.adventure, :notice => 'Encounter was successfully updated.') }
+        format.html { redirect_to(adventure_path(@encounter.adventure) + "?tab=#{@encounter.adventure.encounters.find_index(@encounter) + 1}", :notice => 'Encounter was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
