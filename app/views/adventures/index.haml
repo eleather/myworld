@@ -4,6 +4,6 @@
       .tab-section-title= "Level #{level}"
       - level_adventures.each do |adventure|
         = link_to adventure.name, adventure
-        = "(#{adventure.xp} XP)"
+        = "(#{adventure.world.pretty_name}, #{adventure.xp} XP)"
 - else
   You don't have any adventures yet - please add one to get started.

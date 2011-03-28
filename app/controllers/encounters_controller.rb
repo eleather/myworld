@@ -16,7 +16,7 @@ class EncountersController < ApplicationController
     @encounter = Encounter.find(params[:id])
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html  # Don't use show.html.erb, use adventures/show/ tab.
       format.xml  { render :xml => @encounter }
     end
   end
