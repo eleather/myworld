@@ -1,3 +1,27 @@
+<script>
+  jQuery(function() {
+    jQuery('#encounter-enemy-name-field label').qtip({
+      content: 'The name of this enemy or enemy type.'
+    });
+    
+    jQuery('#encounter-enemy-number-field label').qtip({
+      content: 'The number of enemies of this type.'
+    });
+    
+    jQuery('#encounter-enemy-abbreviation-field label').qtip({
+      content: 'The abbreviation you will use on the map to represent the starting positions of enemies of this type.  This is usually a single, uppercase letter.'
+    });
+    
+    jQuery('#encounter-enemy-xp-field label').qtip({
+      content: 'The experience gained per enemy of this type.'
+    });
+    
+    jQuery('#encounter-enemy-description-field label').qtip({
+      content: 'This is a great place to jot down the book and page number of the stats block for this enemy.'
+    });
+  });
+</script>
+
 <%= form_for(@encounter_enemy) do |f| %>
   <% if @encounter_enemy.errors.any? %>
     <div id="error_explanation">
@@ -14,23 +38,23 @@
   <div class="field">
     <%= f.hidden_field :encounter_id %>
   </div>
-  <div class="field">
+  <div class="field" id="encounter-enemy-name-field">
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </div>
-  <div class="field">
+  <div class="field" id="encounter-enemy-number-field">
     <%= f.label :number %><br />
     <%= f.text_field :number %>
   </div>
-  <div class="field">
+  <div class="field" id="encounter-enemy-abbreviation-field">
     <%= f.label :abbreviation %><br />
     <%= f.text_field :abbreviation %>
   </div>
-  <div class="field">
-    <%= f.label :xp %><br />
+  <div class="field" id="encounter-enemy-xp-field">
+    <%= f.label "XP (per enemy)" %><br />
     <%= f.text_field :xp %>
   </div>
-  <div class="field">
+  <div class="field"  id="encounter-enemy-description-field">
     <%= f.label :description %><br />
     <%= f.text_area :description %>
   </div>
