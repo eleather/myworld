@@ -2,9 +2,7 @@
   jQuery(function() {
     jQuery(".title-bar-breadcrumb").button();
     
-    jQuery("#your-worlds-nav-button").button();
-    jQuery("#your-adventures-nav-button").button();
-    jQuery("#logout-nav-button").button();
+    jQuery(".nav-button").button();
   });
 
 #header
@@ -15,9 +13,10 @@
     - @title_elements.each do |title_element|
       .title-bar-breadcrumb.float-left= (title_element.instance_of? String) ? title_element : (link_to title_element.pretty_name, title_element)
   #navigation.float-right
-    %a#your-worlds-nav-button{:href => root_path(:tab => 0)} Your Worlds
-    %a#your-adventures-nav-button{:href => root_path(:tab => 1)} Your Adventures
-    %a#logout-nav-button{:href => destroy_user_session_path} Logout
+    %a#your-worlds-nav-button.nav-button{:href => root_path(:tab => 0)} Your Worlds
+    %a#your-adventures-nav-button.nav-button{:href => root_path(:tab => 1)} Your Adventures
+    %a#search-nav-button.nav-button{:href => root_path(:tab => 2)} Search
+    %a#logout-nav-button.nav-button{:href => destroy_user_session_path} Logout
 
   .clear-both
 
