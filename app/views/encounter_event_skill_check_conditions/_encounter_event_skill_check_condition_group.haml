@@ -1,0 +1,6 @@
+.tab-sub-section
+  %b= "#{EncounterEventSkillCheckCondition::SKILLS.invert[skill].to_s.titleize} Check"
+  - conditions.each do |condition|
+    %div
+      %b= "DC #{condition.dc}: "
+      = condition.result_text

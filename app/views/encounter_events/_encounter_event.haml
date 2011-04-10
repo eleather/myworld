@@ -1,7 +1,8 @@
 .tab-sub-section
   %b= "When #{encounter_event.when}, read:"
-  %div= encounter_event.text_to_read
+  .encounter_event_text_to_read= encounter_event.text_to_read
   = render encounter_event.encounter_event_miscellaneous_conditions
-  = render encounter_event.encounter_event_skill_check_conditions
+  - encounter_event.encounter_event_skill_check_conditions.group_by { |c| c.skill.raw_value }.each do |skill, conditions|
+    = render :partial => 'encounter_event_skill_check_conditions/encounter_event_skill_check_condition_group', :locals => {:skill => skill, :conditions => conditions}
   = render :partial => 'shared/dialog_form', :locals => {:title => 'Add Condition', :id_text => "add-encounter-event-condition-#{encounter_event.id}", :url => encounter_event_new_encounter_event_condition_path(:encounter_event_id => encounter_event.id)}
   
