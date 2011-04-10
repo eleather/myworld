@@ -1,6 +1,8 @@
 Myworld::Application.routes.draw do
   
+  match 'main/index' => 'main#index'
   match 'main/search' => 'main#search'
+  match 'main/search_result' => 'main#search_result'
   
   devise_for :users
   

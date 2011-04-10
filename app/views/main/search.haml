@@ -1,20 +1,4 @@
 .tab-section
-  .tab-section-title Worlds
-  - if @result_worlds && !@result_worlds.empty?
-    = render @result_worlds
-  - else
-    %div No matching worlds found.
+  = render :partial => 'search_form'
 
-.tab-section
-  .tab-section-title Adventures (Title)
-  - if @result_adventures_by_title && !@result_adventures_by_title.empty?
-    = render @result_adventures_by_title
-  - else
-    %div No matching adventure titles found.
-
-.tab-section
-  .tab-section-title Adventures (Text)
-  - if @result_adventures_by_text && !@result_adventures_by_text.empty?
-    = render @result_adventures_by_text
-  - else
-    %div No matching adventures found.
+#search-result

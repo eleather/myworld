@@ -1,0 +1,11 @@
+:javascript
+  jQuery(function() {
+    jQuery("#search-form")
+      .bind("ajax:complete", function(et, e) {
+        jQuery("#search-result").html(e.responseText);
+      });
+  });
+
+= form_tag '/main/search_result', :id => 'search-form', :remote => true do
+  %span.field= text_field_tag :q
+  %span.actions= submit_tag 'Search'
