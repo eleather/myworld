@@ -1,9 +1,4 @@
 - if @adventures.any?
-  - @adventures.group_by(&:level).each do |level, level_adventures|
-    .tab-section
-      .tab-section-title= "Level #{level}"
-      - level_adventures.each do |adventure|
-        = link_to adventure.name, adventure
-        = "(#{adventure.world.pretty_name}, #{adventure.xp} XP)"
+  = render :partial => 'adventures/adventures_by_level', :locals => {:adventures => @adventures}
 - else
   You don't have any adventures yet - please add one to get started.

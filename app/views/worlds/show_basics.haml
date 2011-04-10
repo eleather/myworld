@@ -8,5 +8,6 @@
 
 .tab-section
   = render :partial => 'shared/paragraph_text', :locals => {:text => @world.description}
+  #edit-world-button Edit
 
-#edit-world-button Edit
+= render :partial => 'adventures/adventures_by_level', :locals => {:adventures => @world.adventures}
