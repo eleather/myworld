@@ -1,10 +1,6 @@
 class AdventuresController < ApplicationController
   layout 'application', :only => ['show']
   
-  def check_availability
-    render :text => 'got it!'
-  end
-  
   # GET /adventures
   # GET /adventures.xml
   def index

@@ -1,30 +1,30 @@
 Myworld::Application.routes.draw do
   
+  match 'main/search' => 'main#search'
+  
+  devise_for :users
+  
   resources :worlds do
     match 'show_basics' => 'worlds#show_basics'
   end
-
-  match 'adventures/check_availability' => 'adventures#check_availability'
   
-  devise_for :users
-
-  resources :encounter_enemies
-
-  resources :encounter_area_features
-
-  resources :encounter_event_skill_check_conditions
-
-  resources :encounter_event_miscellaneous_conditions
-
-  resources :encounter_events do
-    match 'new_encounter_event_condition' => 'encounter_events#new_encounter_event_condition'
-  end
-
   resources :adventures do
     match 'show_basics' => 'adventures#show_basics'
   end
   
-  resources :encounters  
+  resources :encounters 
+
+  resources :encounter_enemies
+  
+  resources :encounter_events do
+    match 'new_encounter_event_condition' => 'encounter_events#new_encounter_event_condition'
+  end
+  
+  resources :encounter_event_miscellaneous_conditions
+
+  resources :encounter_event_miscellaneous_conditions
+
+  resources :encounter_area_features
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

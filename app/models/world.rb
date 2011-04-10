@@ -6,4 +6,8 @@ class World < ActiveRecord::Base
   def pretty_name
     self.name
   end
+  
+  def self.find_for_user(user, conditions = nil)
+    World.find(:all, :conditions => [conditions, "user_id = #{user.id}"].compact.join(" and "))
+  end
 end
