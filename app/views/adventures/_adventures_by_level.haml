@@ -1,4 +1,4 @@
 - adventures.group_by(&:level).each do |level, level_adventures|
   .tab-section
     .tab-section-title= "Level #{level}"
-    = render level_adventures
+    = render level_adventures.sort_by(&:xp)
