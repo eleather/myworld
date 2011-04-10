@@ -19,7 +19,7 @@ class AdventuresController < ApplicationController
   def show
     @adventure = Adventure.find(params[:id])
     
-    @title = @adventure.name
+    @title_elements = [@adventure.world, "> " + @adventure.name]
     @selected_tab = params[:tab]
 
     respond_to do |format|

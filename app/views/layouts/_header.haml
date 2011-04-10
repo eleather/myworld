@@ -1,6 +1,6 @@
 :javascript
   jQuery(function() {
-    jQuery("#title-bar").button();
+    jQuery(".title-bar-breadcrumb").button();
     
     jQuery("#your-worlds-nav-button").button();
     jQuery("#your-adventures-nav-button").button();
@@ -9,7 +9,11 @@
 
 #header
   - if @title
-    #title-bar.float-left= @title
+    - @title_elements ||= []
+    - @title_elements << @title
+  - if @title_elements
+    - @title_elements.each do |title_element|
+      .title-bar-breadcrumb.float-left= (title_element.instance_of? String) ? title_element : (link_to title_element.pretty_name, title_element)
   #navigation.float-right
     %a#your-worlds-nav-button{:href => root_path(:tab => 0)} Your Worlds
     %a#your-adventures-nav-button{:href => root_path(:tab => 1)} Your Adventures
